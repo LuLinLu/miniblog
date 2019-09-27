@@ -2,7 +2,7 @@
   <v-content>
     <v-layout>
     <v-row justify="center">
-      <v-col cols="11" align-self="start" align="start">
+      <v-col cols="8" align-self="start" align="start">
         <v-card outlined class="mr-0">
           <v-img
               class="white--text"
@@ -10,7 +10,7 @@
               width="100%"
               :src="page.cover"
           >
-            <v-card-title class="align-end fill-height">{{page.title}}</v-card-title>
+            <v-card-title class="align-end fill-height text-center">{{page.title}}</v-card-title>
 
           </v-img>
 
@@ -48,11 +48,14 @@
             </div>
           </social-sharing></v-card-text>
           <v-card-text class="black--text body-1 text-justify">
-          <vue-markdown :source="source" id="mark-content"></vue-markdown>
+                <vue-markdown :source="source" id="mark-content"></vue-markdown>
           </v-card-text>
         </v-card>
 
         <v-divider></v-divider>
+      </v-col>
+      <v-col cols="3">
+        <Recommend @recommendchange="handlerecommend"/>
       </v-col>
     </v-row>
     </v-layout>
@@ -82,6 +85,7 @@
     import VueMarkdown from 'vue-markdown'
     import Tag from '../../components/Tag.vue'
     import CardTopic from "../../components/commit/CardTopic";
+    import Recommend from "./Recommend";
     export default {
         name: "Page",
         props:["id"],
@@ -138,9 +142,20 @@
                     }
                     this.source = this.page.content
                 })
+            },
+            handlerecommend(id){
+                console.log(1);
+                this.axios.get(`getarticle?id=${id}`).then( res => {
+                    this.page = res.data
+                    if (res.data.commits !== null){
+                        this.commits = res.data.commits
+                    }
+                    this.source = this.page.content
+                })
             }
         },
         components:{
+            Recommend,
             CardTopic,
             VueMarkdown,
             Tag

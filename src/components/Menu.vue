@@ -62,18 +62,6 @@
             </v-list-item-content>
           </v-list-item>
           <v-divider/>
-          <v-list-item
-              @click="navClick('/page?id=5d873c38c5875cb8e075f28c')"
-          >
-            <v-list-item-action>
-              <v-icon>folder</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title class="grey--text">
-                资源
-              </v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
           <v-divider/>
           <v-list-item
             v-show="!showAvatar"
@@ -108,6 +96,7 @@
 </template>
 
 <script>
+
     export default {
         name: "Menu",
         data:()=>({
@@ -128,7 +117,9 @@
         },
         methods:{
             navClick(index){
-                this.$router.push(index)
+                this.$router.push(index).catch( err => {
+
+                })
             },
             searchHandle(){
                 if(this.search&&this.search.length >= 0){

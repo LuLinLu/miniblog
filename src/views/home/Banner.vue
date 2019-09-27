@@ -18,7 +18,7 @@
         name: "Banner",
         data:()=>({
             show:true,
-            bannerText:"只有登陆/注册后才能发表文章哟，文章归档系统现已经上线。欢迎试用！",
+            bannerText:"登陆后才能发表回复和写文章哟～",
         }),
         methods:{
 

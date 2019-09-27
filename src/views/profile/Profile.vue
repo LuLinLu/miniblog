@@ -191,8 +191,8 @@
             },
             deletefile(url){
                 this.dialog = true
-                console.log(url);
                 this.downloadfile = url
+                this.getUserArts()
             }
         }
     }

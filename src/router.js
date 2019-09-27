@@ -5,6 +5,10 @@ import Home from './views/articles/Articles.vue'
 Vue.use(Router);
 const routes = [
   {
+    path:"/",
+    redirect:"/home"
+  },
+  {
     path: '/Articles',
     name: 'Articles',
     component: ()=>import("@/views/articles/Articles.vue")
@@ -39,8 +43,8 @@ const routes = [
     path:"/search",
     name:"Search",
     component:()=>import("@/views/articles/Search.vue"),
-    props:(route)=> ({query:route.query.q})
-  }
+    props:(route)=> ({query:route.query.q}),
+  },
 ];
 
 export default new Router({
