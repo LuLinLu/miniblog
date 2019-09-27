@@ -10,7 +10,7 @@ import 'font-awesome/css/font-awesome.min.css'
 import 'mavon-editor/dist/css/index.css'
 var SocialSharing = require('vue-social-sharing');
 
-axios.defaults.baseURL = "http://47.107.110.43:8002/api"
+axios.defaults.baseURL = "https://www.lublog.cn:8002/api"
 Vue.use(mavonEditor)
 Vue.use(VueAxios, axios)
 Vue.use(SocialSharing)
