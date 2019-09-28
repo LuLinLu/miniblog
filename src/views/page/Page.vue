@@ -2,7 +2,7 @@
   <v-content>
     <v-layout>
     <v-row justify="center">
-      <v-col cols="8" align-self="start" align="start">
+      <v-col cols="11"  md="7"  align-self="start" align="start">
         <v-card outlined class="mr-0">
           <v-img
               class="white--text"
@@ -54,7 +54,7 @@
 
         <v-divider></v-divider>
       </v-col>
-      <v-col cols="3">
+      <v-col cols="11" md="4" class="d-none d-md-flex d-lg-none d-lg-flex d-xl-none">
         <Recommend @recommendchange="handlerecommend"/>
       </v-col>
     </v-row>

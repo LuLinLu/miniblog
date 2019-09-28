@@ -1,7 +1,7 @@
 <template>
   <v-content>
     <banner/>
-    <v-parallax :src="require('@/assets/material.webp')">
+    <v-parallax :src="require('@/assets/material.webp')" class="d-none d-md-flex d-lg-none d-lg-flex d-xl-none">
       <v-row
           align="center"
           justify="center"
@@ -12,10 +12,10 @@
     </v-parallax>
     <v-container>
       <v-row>
-        <v-col cols="6" md="6" xl="6">
+        <v-col cols="12" md="6" sm="6">
           <ImgCard :homedata="homedata[0]"/>
         </v-col>
-        <v-col cols="6" md="6" xl="6">
+        <v-col cols="12" md="6" sm="6">
           <ImgCard :homedata="homedata[1]" :key="homedata.id" />
         </v-col>
        </v-row>
@@ -26,16 +26,16 @@
       </v-row>
       <v-sheet color="pink lighten-3" class="text-center subtitle-2">新近发表</v-sheet>
       <v-row>
-        <v-col cols="3" md="3" xs="6">
+        <v-col cols="12" md="3" xs="6" sm="6">
           <ImgCard :homedata="homedata[3]" :key="homedata.id" />
         </v-col>
-        <v-col cols="3" md="3" xs="6">
+        <v-col cols="12" md="3" xs="6" sm="6">
           <ImgCard :homedata="homedata[4]" :key="homedata.id" />
         </v-col>
-        <v-col cols="3" md="3" xs="6">
+        <v-col cols="12" md="3" xs="6" sm="6">
           <ImgCard :homedata="homedata[5]" :key="homedata.id" />
         </v-col>
-        <v-col cols="3" md="3" xs="6">
+        <v-col cols="12" md="3" xs="6" sm="6">
           <ImgCard :homedata="homedata[6]" :key="homedata.id" />
         </v-col>
       </v-row>
